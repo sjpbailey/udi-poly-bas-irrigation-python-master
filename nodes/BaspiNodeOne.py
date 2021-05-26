@@ -52,6 +52,14 @@ class BaspiNodeOne(polyinterface.Node):
         self.setInputDriver('GV2', 3)
         self.setInputDriver('GV3', 4)
         self.setInputDriver('GV4', 5)
+
+        # Binary/Digital Outputs
+        self.setOutputDriver('GV6', 1)
+        self.setOutputDriver('GV7', 2)
+        self.setOutputDriver('GV8', 3)
+        self.setOutputDriver('GV9', 4)
+        self.setOutputDriver('GV10', 5)
+        self.setOutputDriver('GV11', 6)
         
         # Input 6 Conversion
         input_six = self.bc.universalInput(6)
@@ -72,15 +80,7 @@ class BaspiNodeOne(polyinterface.Node):
             self.setDriver(driver, count, force=True)
         else:
             return
-    
-    # Binary/Digital Outputs
-        self.setOutputDriver('GV6', 1)
-        self.setOutputDriver('GV7', 2)
-        self.setOutputDriver('GV8', 3)
-        self.setOutputDriver('GV9', 4)
-        self.setOutputDriver('GV10', 5)
-        self.setOutputDriver('GV11', 6)   
-
+ 
     ### Binary Output Conversion ###    
     def setOutputDriver(self, driver, input):
         output_val = self.bc.binaryOutput(input)
@@ -90,8 +90,9 @@ class BaspiNodeOne(polyinterface.Node):
             self.setDriver(driver, count, force=True)
         else:
             return       
+        pass
 
-    # Dict for 6 output ON OFF function     
+        # Dict for 6 output ON OFF function     
         self.mapping = {
             'BON1' : {'output':'GV6', 'index': (1)}, 
             'BOF1' : {'output':'GV6', 'index': (1)}, 

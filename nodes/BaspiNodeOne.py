@@ -79,8 +79,11 @@ class BaspiNodeOne(polyinterface.Node):
 
     ### Binary Output Conversion ###    
     def setOutputDriver(self, driver, input):
-        output_val = self.bc.binaryOutput(input)
-       
+        input_val = self.bc.binaryOutput(input)
+        count = 0
+        if input_val is not None:
+            count = int(float(input_val))
+            self.setDriver(driver, count, force=True)   
 
     # Dict for 6 output ON OFF function     
         self.mapping = {

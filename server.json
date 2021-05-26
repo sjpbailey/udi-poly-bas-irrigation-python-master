@@ -1,5 +1,5 @@
 {
-  "name": "tstIrrigation",
+  "name": "BasIrrigation",
   "docs": "https://github.com/sjpbailey/uudi-poly-bas-irrigation-python-master",
   "type": "python3",
   "executable": "baspi-irrigation-poly.py",

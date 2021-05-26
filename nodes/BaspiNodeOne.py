@@ -60,9 +60,8 @@ class BaspiNodeOne(polyinterface.Node):
         self.setInputDriver('GV2', 3)
         self.setInputDriver('GV3', 4)
         self.setInputDriver('GV4', 5)
-        
-    #def setInputDriver(self, driver, input):
-    #    input_val = self.bc.universalInput(input)
+   
+    ### Universal Inputs Conversion ###
     def setInputDriver(self, driver, input):
         input_val = self.bc.universalInput(input)
         count = 0
@@ -77,7 +76,8 @@ class BaspiNodeOne(polyinterface.Node):
         self.setOutputDriver('GV9', 4)
         self.setOutputDriver('GV10', 5)
         self.setOutputDriver('GV11', 6)
-        
+
+    ### Binary Output Conversion ###    
     def setOutputDriver(self, driver, input):
         output_val = self.bc.binaryOutput(input)
        

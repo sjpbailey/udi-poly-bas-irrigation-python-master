@@ -10,22 +10,15 @@
   "shortPoll": "60",
   "longPoll": "120",
   "testMode": false,
-  "profile_version": "2.5.0",
+  "profile_version": "2.5.1",
   "credits": [
     {
       "title": "BAS-Irrigation",
       "author": "Steve Bailey",
-      "version": "2.5.0",
+      "version": "2.5.1",
       "date": "November 24 2020",
       "source": "https://github.com/sjpbailey/uudi-poly-bas-irrigation-python-master",
       "license": "https://github.com/sjpbailey/uudi-poly-bas-irrigation-python-master/LICENSE"
     }
-  ],
-  "store": {
-    "developer": "sjpbailey1961@gmail.com",
-    "price": 0.01,
-    "recurring": 0,
-    "recurring_interval": "month",
-    "recurring_period": 0
-  }
+  ]
 }

@@ -50,8 +50,7 @@ class BasIrrigationController(Controller):
         self.check_params()
         self.set_debug_level(self.getDriver('GV1'))
         self.discover()
-        self.poly.add_custom_config_docs("<b>This is some custom config docs data</b>")
-
+        
     def shortPoll(self):
         self.discover()
         LOGGER.debug('shortPoll')

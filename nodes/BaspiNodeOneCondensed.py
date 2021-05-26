@@ -46,13 +46,6 @@ class BaspiNodeOne(polyinterface.Node):
         for i in range(1,7):
                LOGGER.info(str(self.bc.binaryOutput(i)))
         
-        ### Universal Inputs ###
-        self.setInputDriver('GV0', 1)
-        self.setInputDriver('GV1', 2)
-        self.setInputDriver('GV2', 3)
-        self.setInputDriver('GV3', 4)
-        self.setInputDriver('GV4', 5)
-        
         # Input 6 Conversion
         input_six = self.bc.universalInput(6)
         if input_six is not None:
@@ -60,35 +53,28 @@ class BaspiNodeOne(polyinterface.Node):
             self.setDriver('GV5', int(sumss_count), force=True)
         if input_six is not None:
             sumss_count = int(float(self.bc.universalInput(6))) 
-        else:
-            return
-  
-    ### Universal Input Conversion ###
+       
+        ### Universal Inputs ###
+        self.setInputDriver('GV0', 1)
+        self.setInputDriver('GV1', 2)
+        self.setInputDriver('GV2', 3)
+        self.setInputDriver('GV3', 4)
+        self.setInputDriver('GV4', 5)
+        
     def setInputDriver(self, driver, input):
         input_val = self.bc.universalInput(input)
-        count = 0
-        if input_val is not None:
-            count = int(float(input_val))
-            self.setDriver(driver, count, force=True)
-        else:
-            return
-    
-    # Binary/Digital Outputs
+     
+        # Binary/Digital Outputs
         self.setOutputDriver('GV6', 1)
         self.setOutputDriver('GV7', 2)
         self.setOutputDriver('GV8', 3)
         self.setOutputDriver('GV9', 4)
         self.setOutputDriver('GV10', 5)
-        self.setOutputDriver('GV11', 6)   
-
-    ### Binary Output Conversion ###    
+        self.setOutputDriver('GV11', 6)
+        
     def setOutputDriver(self, driver, input):
         output_val = self.bc.binaryOutput(input)
-        count = 0
-        if output_val is not None:
-            count = (output_val)
-            self.setDriver(driver, count, force=True)
-        pass       
+       
 
     # Dict for 6 output ON OFF function     
         self.mapping = {

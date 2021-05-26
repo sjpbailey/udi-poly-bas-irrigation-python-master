@@ -1,5 +1,5 @@
 {
-  "name": "BasIrrigation",
+  "name": "tstIrrigation",
   "docs": "https://github.com/sjpbailey/uudi-poly-bas-irrigation-python-master",
   "type": "python3",
   "executable": "baspi-irrigation-poly.py",
@@ -20,12 +20,5 @@
       "source": "https://github.com/sjpbailey/uudi-poly-bas-irrigation-python-master",
       "license": "https://github.com/sjpbailey/uudi-poly-bas-irrigation-python-master/LICENSE"
     }
-  ],
-  "store": {
-    "developer": "sjpbailey1961@gmail.com",
-    "price": 0.01,
-    "recurring": 0,
-    "recurring_interval": "month",
-    "recurring_period": 0
-  }
+  ]
 }

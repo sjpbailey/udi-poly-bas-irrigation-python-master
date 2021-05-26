@@ -1,6 +1,6 @@
 
 # controller
-ND-controller-NAME = Irrigation
+ND-controller-NAME = TESTIrrigation
 ND-controller-ICON = GenericRspCtl
 CMD-ctl-QUERY"-NAME = Query
 CMD-ctl-DISCOVER-NAME = Re-Discover

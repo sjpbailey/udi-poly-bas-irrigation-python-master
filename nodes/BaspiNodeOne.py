@@ -61,9 +61,15 @@ class BaspiNodeOne(polyinterface.Node):
         self.setInputDriver('GV3', 4)
         self.setInputDriver('GV4', 5)
         
+    #def setInputDriver(self, driver, input):
+    #    input_val = self.bc.universalInput(input)
     def setInputDriver(self, driver, input):
         input_val = self.bc.universalInput(input)
-     
+        count = 0
+        if input_val is not None:
+            count = int(float(input_val))
+            self.setDriver(driver, count, force=True)
+
         # Binary/Digital Outputs
         self.setOutputDriver('GV6', 1)
         self.setOutputDriver('GV7', 2)

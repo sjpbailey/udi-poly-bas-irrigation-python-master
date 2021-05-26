@@ -88,7 +88,8 @@ class BaspiNodeOne(polyinterface.Node):
         if output_val is not None:
             count = (output_val)
             self.setDriver(driver, count, force=True)
-        pass       
+        else:
+            return       
 
     # Dict for 6 output ON OFF function     
         self.mapping = {

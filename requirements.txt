@@ -3,6 +3,8 @@ bascontrolns==0.0.3
 certifi==2020.11.8
 chardet==3.0.4
 idna==2.10
+importlib-metadata==4.5.0
+Markdown==3.3.4
 markdown2==2.3.10
 netifaces==0.10.9
 paho-mqtt==1.5.1
@@ -10,4 +12,8 @@ pgc-interface==1.1.9
 polyinterface==2.1.0
 python-dotenv==0.15.0
 requests==2.25.0
-urllib3==1.26.4
+style==1.1.0
+typing-extensions==3.10.0.0
+update==0.0.1
+urllib3==1.26.5
+zipp==3.4.1

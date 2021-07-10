@@ -9,18 +9,17 @@ import urllib3
 from bascontrolns import Device, Platform
 
 LOGGER = polyinterface.LOGGER
-
 class BaspiNodeOne(polyinterface.Node):
     def __init__(self, controller, primary, address, name, ipaddress, bc):
         super(BaspiNodeOne, self).__init__(controller, primary, address, name)
         self.lpfx = '%s:%s' % (address,name)
         self.ipaddress = (str(ipaddress).upper()) #Device(str(ipaddress).upper())
         self.bc = bc
-     
+
     def start(self):
         if self.ipaddress is not None:
             self.bc = Device(self.ipaddress)
-                  
+
         ### Do we have a BASpi or an Edge Device ###
         if self.bc.ePlatform == Platform.BASC_PI or self.bc.ePlatform == Platform.BASC_PO: ### if a BASpi-6u6r Device is found
             LOGGER.info('connected to BASpi-6U6R')
@@ -41,10 +40,10 @@ class BaspiNodeOne(polyinterface.Node):
         # Input/Output Status
         LOGGER.info('Inputs')
         for i in range(1,7):
-               LOGGER.info(str(self.bc.universalInput(i)))
+            LOGGER.info(str(self.bc.universalInput(i)))
         LOGGER.info('Outputs')
         for i in range(1,7):
-               LOGGER.info(str(self.bc.binaryOutput(i)))
+            LOGGER.info(str(self.bc.binaryOutput(i)))
         
         ### Universal Inputs ###
         self.setInputDriver('GV0', 1)
@@ -70,7 +69,7 @@ class BaspiNodeOne(polyinterface.Node):
             sumss_count = int(float(self.bc.universalInput(6))) 
         else:
             return
-  
+
     ### Universal Input Conversion ###
     def setInputDriver(self, driver, input):
         input_val = self.bc.universalInput(input)
@@ -80,7 +79,7 @@ class BaspiNodeOne(polyinterface.Node):
             self.setDriver(driver, count, force=True)
         else:
             return
- 
+
     ### Binary Output Conversion ###    
     def setOutputDriver(self, driver, input):
         output_val = self.bc.binaryOutput(input)
@@ -137,12 +136,12 @@ class BaspiNodeOne(polyinterface.Node):
         {'driver': 'GV3', 'value': 1, 'uom': 56},
         {'driver': 'GV4', 'value': 1, 'uom': 56},
         {'driver': 'GV5', 'value': 1, 'uom': 25},
-        {'driver': 'GV6', 'value': 1, 'uom': 80},
-        {'driver': 'GV7', 'value': 1, 'uom': 80},
-        {'driver': 'GV8', 'value': 1, 'uom': 80},
-        {'driver': 'GV9', 'value': 1, 'uom': 80},
-        {'driver': 'GV10', 'value': 1, 'uom': 80},
-        {'driver': 'GV11', 'value': 1, 'uom': 80},
+        #{'driver': 'GV6', 'value': 1, 'uom': 80},
+        #{'driver': 'GV7', 'value': 1, 'uom': 80},
+        #{'driver': 'GV8', 'value': 1, 'uom': 80},
+        #{'driver': 'GV9', 'value': 1, 'uom': 80},
+        #{'driver': 'GV10', 'value': 1, 'uom': 80},
+        #{'driver': 'GV11', 'value': 1, 'uom': 80},
         ]
     
     id = 'baspi1_id'

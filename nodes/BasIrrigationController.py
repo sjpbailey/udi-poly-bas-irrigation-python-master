@@ -62,8 +62,6 @@ class BasIrrigationController(Controller):
         LOGGER.debug('longPoll')
         for node in self.nodes:
             self.nodes[node].reportDrivers()
-       
-        
 
     def query(self,command=None):
         self.check_params()
@@ -180,8 +178,7 @@ class BasIrrigationController(Controller):
             self.ipaddress6 = default_irr6_ip
             LOGGER.error(
                 'check_params: The First BASpi6u6r IP is not defined in customParams, please add at least one.  Using {}'.format(self.ipaddress))
-                  
-       
+
         self.addCustomParam({'irr1_ip': self.ipaddress})
         self.addCustomParam({'irr2_ip': self.ipaddress2})
         self.addCustomParam({'irr3_ip': self.ipaddress3})
@@ -193,7 +190,7 @@ class BasIrrigationController(Controller):
         if self.ipaddress == default_irr1_ip:
             self.setDriver('GV19', 0) 
             self.addNotice('Please set proper, IP for your Zone Controllers as key = irr1_ip and the BASpi IP Address for Value '
-                           'in configuration page, and restart this nodeserver for additional controllers input irr2_ip, irr3_ip up to irr6')
+                            'in configuration page, and restart this nodeserver for additional controllers input irr2_ip, irr3_ip up to irr6')
             st = False
         
         if self.ipaddress2 == default_irr2_ip:
@@ -213,7 +210,7 @@ class BasIrrigationController(Controller):
 
         else:
             return True
-   
+
     def discover(self, *args, **kwargs):
         ### BASpi One ###
         LOGGER.info(self.ipaddress)
@@ -232,20 +229,20 @@ class BasIrrigationController(Controller):
         if self.ipaddress3 is not None:
             self.bc3 = Device(self.ipaddress3)
             self.addNode(BaspiNodeThree(self, self.address, 'baspi3_id', 'Zone Control 3', self.ipaddress3, self.bc3))
-       
+
         ### BASpi Four ###
         LOGGER.info(self.ipaddress4)
         if self.ipaddress4 is not None:
             self.bc4 = Device(self.ipaddress4)
             self.addNode(BaspiNodeFour(self, self.address, 'baspi4_id', 'Zone Control 4', self.ipaddress4, self.bc4))
-       
+
         ### BASpi Five ###
         LOGGER.info(self.ipaddress5)
         if self.ipaddress5 is not None:
             self.bc5 = Device(self.ipaddress5)
             self.addNode(BaspiNodeFive(self, self.address, 'baspi5_id', 'Zone Control 5', self.ipaddress5, self.bc5))
         
-         ### BASpi Fsix ###
+        ### BASpi Fsix ###
         LOGGER.info(self.ipaddress6)
         if self.ipaddress6 is not None:
             self.bc6 = Device(self.ipaddress6)
